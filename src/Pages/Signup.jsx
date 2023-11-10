@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 function Signup() {
+  BASE_URL=process.env.BASE_URL
 const navigate = useNavigate()
     const [errors, setErrors] = useState({})
     let auth=null
@@ -58,7 +59,7 @@ const navigate = useNavigate()
 
         if (Object.keys(validationErrors).length === 0) {
         //   addNote(formData.title,formData.description,formData.tag)
-        axios.post('http://localhost:5000/api/auth/createuser',{
+        axios.post(`${BASE_URL}api/auth/createuser`,{
             "name":formData.fname+ ' '+formData.lname,
             "email":formData.email,
             "password":formData.password

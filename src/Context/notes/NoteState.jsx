@@ -5,10 +5,11 @@ import axios from "axios";
 function NoteState(props) {
   const host='http://localhost:5000/'
   const [notes,setNotes]=useState([])
+  BASE_URL=process.env.BASE_URL
   
 //Get all notes
 const getAllNotes=() =>{
-  axios.get(`${host}api/notes/fetchallnotes/`,{ 
+  axios.get(`${BASE_URL}api/notes/fetchallnotes/`,{ 
     headers: {
       'auth-token':localStorage.getItem('authtoken'),
     },
@@ -22,7 +23,7 @@ const getAllNotes=() =>{
     //Add Note
 const addNote=(title,description,tag) =>{
  //adding note in backend db 
-  axios.post(`${host}api/notes/addnote`,{title,description,tag},{ 
+  axios.post(`${BASE_URL}api/notes/addnote`,{title,description,tag},{ 
     headers: {
       'Content-Type': 'application/json',
       'auth-token':localStorage.getItem('authtoken'),
@@ -41,7 +42,7 @@ const addNote=(title,description,tag) =>{
 const editNote=async(id,title,description,tag)=>{
 
   //editiong permanantly in backend
-axios.put(`${host}api/notes/updatenote/${id}`,{title,description,tag},{ 
+axios.put(`${BASE_URL}api/notes/updatenote/${id}`,{title,description,tag},{ 
     headers: {
         'Content-Type': 'application/json',
         'auth-token':localStorage.getItem('authtoken'),
@@ -64,7 +65,7 @@ for (let index = 0; index < notes.length; index++) {
     //Delete Note
 const deleteNote=(id)=>{
   //deleting from backend db for permanant deletion
-  axios.delete(`${host}api/notes/deletenote/${id}`,{ 
+  axios.delete(`${BASE_URL}api/notes/deletenote/${id}`,{ 
     headers: {
       'Content-Type': 'application/json',
       'auth-token':localStorage.getItem('authtoken'),

@@ -12,7 +12,7 @@ import AlertContext from '../Context/alerts/AlertContext'
 
 function Login() {
   const navigate = useNavigate()
-
+  BASE_URL=process.env.BASE_URL
   const [errors, setErrors] = useState({})
   const [formData, setFormData] = useState({
     email: '',
@@ -47,7 +47,7 @@ if (!formData.email.trim()) {
     setErrors(validationErrors)
 
     if (Object.keys(validationErrors).length === 0) {
-    axios.post('http://localhost:5000/api/auth/login',{
+    axios.post(`${BASE_URL}api/auth/login`,{
         "email":formData.email,
         "password":formData.password
       },{
