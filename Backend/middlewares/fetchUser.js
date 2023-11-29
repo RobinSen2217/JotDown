@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET='rdxSkullShot' 
+const JWT_SECRET=process.env.JWT_SECRET 
 
 const fetchUser=(req,res,next)=>{
 //Retrieve user from token and add the id to req object

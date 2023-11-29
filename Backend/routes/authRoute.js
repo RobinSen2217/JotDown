@@ -4,7 +4,7 @@ const User=require('../models/Users')  //importing user model
 const {body,validationResult}=require('express-validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const JWT_SECRET='rdxSkullShot'   //creating our secret for jwt
+const JWT_SECRET=process.env.JWT_SECRET   //creating our secret for jwt
 const fetchUser=require('../middlewares/fetchUser')
 
 //ROUTE1
