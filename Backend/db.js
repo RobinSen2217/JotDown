@@ -1,8 +1,10 @@
 
 const mongoose=require('mongoose')
-const mongoURI='mongodb://0.0.0.0:27017/JotDown'
+const dotenv = require("dotenv");
+dotenv.config();
+// const mongoURI='mongodb://0.0.0.0:27017/JotDown'
 const mongoConnect=async()=>{
-    mongoose.connect(mongoURI,
+    mongoose.connect(process.env.MONGODB_URL,{ useNewUrlParser: true, useUnifiedTopology: true },
         await console.log('connected to mongo successfully')   //awaiting completion of consequent action
     )
 }

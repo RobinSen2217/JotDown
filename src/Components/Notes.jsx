@@ -122,10 +122,10 @@ const handleEditSubmit=(e)=>{
 
           <form className='flex flex-col justify-evenly mx-auto gap-y-[10px] w-[400px] '>
 
-            <Input maxLength={16} name="title" variant='static' value={eformData.title} onChange={handleChange}  minLength={4} placeholder='Title' color='purple' className='text-white placeholder:text-white'/>
+            <Input maxLength={16} name="title" label='Title' variant='static' value={eformData.title} onChange={handleChange}  minLength={4}  color='purple' className='text-white placeholder:text-white'/>
             {errors.title ? <span className='text-red-300 font-serif'>{errors.title}</span>:<span> &nbsp; </span>}
 
-             <Textarea name='description' variant='static' value={eformData.description} minLength={5} placeholder='Description' onChange={handleChange} className='text-white placeholder:text-white ' color='purple' rows={4}/>
+             <Textarea name='description' variant='static' value={eformData.description} minLength={5} label='Description' onChange={handleChange} className='text-white placeholder:text-white ' color='purple' rows={4}/>
              {errors.description ? <span  className={`text-red-300 font-serif `}>{errors.description}</span>:<span> &nbsp; </span>}
 
              <Card className="w-full text-white bg-transparent shadow-none">
@@ -219,13 +219,13 @@ const handleEditSubmit=(e)=>{
               </DialogBody>
       </Dialog >
  
-      {notes.length===0 ? <p className='text-center text-lg'>No notes to display.</p>:
+      {notes.length===0 ? <p className='text-center text-lg dark:text-white'>No notes to display.</p>:
        notes.map((note,ind)=>{
         return (
             <>
             <div key={ind} className='shadow-lg shadow-gray-800 p-5 w-[300px]  flex flex-col outline outline-gray-700/75 outline-1'>
  <div className='flex flex-nowrap justify-between'>
-                <h1 className='font-semibold'>{note.title}</h1>
+                <h1 className='font-semibold dark:text-white'>{note.title}</h1>
                 <div>
                     <i onClick={()=>{
                       setOpen(!open)
@@ -255,7 +255,7 @@ document.getElementById(ind.toString()).classList.add('fa-beat-fade')
                 
  </div>
             </div>
-                <p className='mt-3 break-words'>{note.description}</p>
+                <p className='mt-3 break-words dark:text-white'>{note.description}</p>
                 <span className={`${handleColor(note.tag)} text-white py-1 w-1/2 mt-3 text-center font-semibold text-md rounded-full `}>{note.tag}</span>
             </div>
             </>

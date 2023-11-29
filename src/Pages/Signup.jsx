@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 function Signup() {
-  BASE_URL=process.env.BASE_URL
+ const BASE_URL='http://localhost:5000/'
 const navigate = useNavigate()
     const [errors, setErrors] = useState({})
     let auth=null

@@ -12,7 +12,7 @@ import AlertContext from '../Context/alerts/AlertContext'
 
 function Login() {
   const navigate = useNavigate()
-  BASE_URL=process.env.BASE_URL
+ const BASE_URL='http://localhost:5000/'
   const [errors, setErrors] = useState({})
   const [formData, setFormData] = useState({
     email: '',

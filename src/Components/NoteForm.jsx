@@ -87,14 +87,14 @@ function NoteForm() {
    
     <div>
         <form  className=' mt-2 grid grid-rows-7 grid-cols-1 justify-evenly mx-auto  [@media(min-width:746px)]:w-1/2 [@media(min-width:319px)]:w-2/3 w-5/6'>
-    <Input maxLength={16} name='title' color='purple' onChange={handleChange}  variant="outlined" label="Title" className='bg-white'/>
+    <Input maxLength={16} name='title' color='purple' onChange={handleChange}  variant="outlined" label="Title" className=' bg-transparent dark:text-white'/>
     {errors.title ? <span className='text-red-400 font-serif'>{errors.title}</span>:<span> &nbsp; </span>}
-    <Textarea name='description' color='purple' size="lg"  onChange={handleChange} label="Description" className='bg-white' rows={8}/>
+    <Textarea name='description' color='purple' size="lg"  onChange={handleChange} label="Description" className='dark:text-white bg-transparent ' rows={8}/>
     {errors.description ? <span id='descErr' className={`text-red-400 font-serif `}>{errors.description}</span>:<span> &nbsp; </span>}
 
 
 
-    <Card className="w-full ">
+    <Card className="w-full bg-transparent">
       <List className="flex-row">
         <ListItem className="p-0">
           <label

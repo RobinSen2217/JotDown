@@ -1,10 +1,9 @@
 const mongoConnect=require('./db')  //importing the connecting function from db.js
-mongoConnect()                   //connecting to database
-
+require('dotenv').config({path: '../.env'})
+const port=process.env.PORT || 5000
 const express=require('express')
 const app=express()
-const port=process.env.PORT || 5000
-
+mongoConnect()                   //connecting to database
 const cors=require('cors')
 app.use(cors()) //needed so that frontend can fetch from API
 

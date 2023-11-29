@@ -5,7 +5,7 @@ import axios from "axios";
 function NoteState(props) {
   const host='http://localhost:5000/'
   const [notes,setNotes]=useState([])
-  BASE_URL=process.env.BASE_URL
+ const BASE_URL='http://localhost:5000/'
   
 //Get all notes
 const getAllNotes=() =>{

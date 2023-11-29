@@ -1,24 +1,50 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link,useLocation } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext,useState } from 'react'
 import { Alert } from '@material-tailwind/react'
 import AlertContext from '../Context/alerts/AlertContext'
 
 function Navbar() {
   const alerts=useContext(AlertContext)
-  const {addOpen,logOpen}=alerts
-
+ const system=window.matchMedia('(prefers-color-scheme:dark)') 
+ const {addOpen,logOpen}=alerts
+ const [dark,setDark]=useState(system.matches?'dark':'light')
   const location= useLocation()
-
+  const toggleDark=()=>{
+    if (dark!=='dark'){
+      setDark('dark')
+    }else{
+      setDark('light')
+    }
+}
+  useEffect(()=>{
+switch (dark) {
+  case 'dark':
+    document.documentElement.classList.add('dark')
+    document.body.style.backgroundColor='#000000'
+    localStorage.setItem('theme', 'dark')
+    break;
+    case 'light':
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add('light')
+      document.body.style.backgroundColor='#ffffff'
+      localStorage.setItem('theme', 'light')
+  default:
+    localStorage.removeItem('theme')
+    break;
+}
+  },[dark])
   return (
     <div >
-          <header id='nav' className="text-gray-600 bg-purple-800 shadow-lg  shadow-gray-500 body-font">
+          <header id='nav' className="text-gray-600 bg-purple-800 shadow-lg  dark:shadow-gray-800  shadow-gray-500 body-font">
   <div className="container mx-auto flex flex-wrap py-4  flex-row items-center justify-between">
     <a className="flex title-font font-medium items-center text-gray-900 mb-0 max-[456px]:mx-auto">
    {/* <img src="/dadaLogo.png" alt="dadaLogo" className='min-[410px]:h-16 h-12'/> */}
       <Link to='/' className="ml-3 text-lg min-[480px]:text-3xl font-semibold hover:cursor-pointer pr-2">JotDown</Link>
     </a>
     <nav className="md:ml-auto max-[456px]:mx-auto flex flex-wrap items-center text-white justify-center">
+      <button id='mode' onClick={toggleDark} className='py-1 w-10  bg-purple-500 shadow-lg mr-7 rounded-md'>
+        {dark==='light'?<i className={`fa-solid fa-moon`} style={{color: "#fff700"}}></i>:<i className={`fa-solid fa-sun`} style={{color: "#fff700"}}></i>}</button>
       <Link  className={`mr-7 hover:cursor-pointer hover:scale-150 hover:transition-all  ${location.pathname==='/'? 'underline decoration-red-600 text-red-500 decoration-[2px] scale-125 underline-offset-4  pointer-events-none':''}`} to='/'>Home</Link>
       {/* <Link to='/user' className="mr-5 hover:text-gray-900 hover:cursor-pointer" >Agents</Link> */}
       <Link to='/about' className={`mr-7 hover:cursor-pointe hover:scale-150 hover:transition-all ${location.pathname==='/about'? ' underline decoration-red-600 text-red-500 decoration-[2px] scale-125 underline-offset-4 font-semibold pointer-events-none':''}`}>About</Link>
