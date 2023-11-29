@@ -5,10 +5,10 @@ import { useState } from 'react';
 import { Button } from "@material-tailwind/react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import data from '/env.json'
+
 
 function Signup() {
- const BASE_URL=data.BASE_URL
+ const BASE_URL='https://jotdown-backend.onrender.com/'
 
 const navigate = useNavigate()
     const [errors, setErrors] = useState({})

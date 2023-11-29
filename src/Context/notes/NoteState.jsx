@@ -1,10 +1,10 @@
 import { useState,useContext } from "react";
 import NoteContext from "./NoteContext";
 import axios from "axios";
-import data from '/env.json'
+
 
 function NoteState(props) {
-  const BASE_URL=data.BASE_URL
+  const BASE_URL='https://jotdown-backend.onrender.com/'
   const [notes,setNotes]=useState([])
 
   

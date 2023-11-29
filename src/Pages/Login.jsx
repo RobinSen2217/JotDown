@@ -7,11 +7,10 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useContext } from 'react'
 import AlertContext from '../Context/alerts/AlertContext'
-import data from '/env.json'
+
 
 function Login() {
-  const BASE_URL=data.BASE_URL
-  
+  const BASE_URL='https://jotdown-backend.onrender.com/'
   const navigate=useNavigate()
   const [errors, setErrors] = useState({})
   const [formData, setFormData] = useState({
