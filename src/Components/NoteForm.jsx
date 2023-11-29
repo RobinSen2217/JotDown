@@ -65,6 +65,16 @@ function NoteForm() {
         if (Object.keys(validationErrors).length === 0) {
           addNote(formData.title,formData.description,formData.tag)
   AddAlert()
+document.getElementById('title').value=''
+document.getElementById('description').value=''
+document.getElementById('Personal').checked=false
+document.getElementById('Work').checked=false
+document.getElementById('Other').checked=false
+  setFormData({
+    title: '',
+    description: '',
+tag:''
+    })
         }
         else {
           setTimeout(() => {
@@ -87,9 +97,9 @@ function NoteForm() {
    
     <div>
         <form  className=' mt-2 grid grid-rows-7 grid-cols-1 justify-evenly mx-auto  [@media(min-width:746px)]:w-1/2 [@media(min-width:319px)]:w-2/3 w-5/6'>
-    <Input maxLength={16} name='title' color='purple' onChange={handleChange}  variant="outlined" label="Title" className=' bg-transparent dark:text-white'/>
-    {errors.title ? <span className='text-red-400 font-serif'>{errors.title}</span>:<span> &nbsp; </span>}
-    <Textarea name='description' color='purple' size="lg"  onChange={handleChange} label="Description" className='dark:text-white bg-transparent ' rows={8}/>
+    <Input maxLength={16} id='title' name='title' color='purple' onChange={handleChange}  variant="outlined" label="Title" className=' bg-transparent dark:text-white'/>
+    {errors.title ? <span  className='text-red-400 font-serif'>{errors.title}</span>:<span> &nbsp; </span>}
+    <Textarea name='description' id='description' color='purple' size="lg"  onChange={handleChange} label="Description" className='dark:text-white bg-transparent ' rows={8}/>
     {errors.description ? <span id='descErr' className={`text-red-400 font-serif `}>{errors.description}</span>:<span> &nbsp; </span>}
 
 
