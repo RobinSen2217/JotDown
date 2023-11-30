@@ -48,17 +48,17 @@ switch (dark) {
       <Link  className={`mr-7 hover:cursor-pointer hover:scale-150 hover:transition-all  ${location.pathname==='/'? 'underline decoration-red-600 text-red-500 decoration-[2px] scale-125 underline-offset-4  pointer-events-none':''}`} to='/'>Home</Link>
       {/* <Link to='/user' className="mr-5 hover:text-gray-900 hover:cursor-pointer" >Agents</Link> */}
       <Link to='/about' className={`mr-7 hover:cursor-pointe hover:scale-150 hover:transition-all ${location.pathname==='/about'? ' underline decoration-red-600 text-red-500 decoration-[2px] scale-125 underline-offset-4 font-semibold pointer-events-none':''}`}>About</Link>
-     {localStorage.getItem('authtoken')?<Link to='/login' onClick={()=>{localStorage.removeItem('authtoken')}} className=" hover:cursor-pointer bg-white text-red-500 border border-red-500 px-2 py-1 rounded-md hover:bg-red-500 hover:text-white hover:border-white" >Logout</Link>:
+     {localStorage.getItem('authtoken')?<Link to='/login' onClick={()=>{localStorage.removeItem('authtoken')}} className=" hover:cursor-pointer bg-white text-red-500 border border-red-500 px-2 py-1 rounded-md hover:bg-red-500 mr-3 hover:text-white hover:border-white" >Logout</Link>:
      <><Link to='/login' className={`bg-blue-400 text-white hover:cursor-pointer hover:bg-blue-600 mr-7 rounded-lg px-3 py-1 ${location.pathname==='/login'? 'hidden':''}`}>Sign In</Link>
      <Link to='/signup' className={`bg-blue-400 rounded-lg text-white hover:cursor-pointer hover:bg-blue-600 px-3 py-1 ${location.pathname==='/signup'?'hidden':''}`}>Sign Up</Link></>}
     </nav>
 
   </div>
 </header>
-<Alert variant='gradient' open={addOpen} className={`rounded-none z-50  left-0 right-0 absolute shadow-md shadow-green-200`} color='green' icon={<i class="fa-solid fa-thumbs-up" style={{color: '#ffffff'}}></i>}>
+<Alert variant='gradient' open={addOpen} className={`rounded-none z-50  left-0 right-0 absolute shadow-md shadow-green-200`} color='green' icon={<i className="fa-solid fa-thumbs-up" style={{color: '#ffffff'}}></i>}>
       Success: Note Added.
     </Alert>
-    <Alert variant='gradient' open={logOpen} className='rounded-none absolute z-50 shadow-md shadow-red-200 right-0 left-0 ' color='red' icon={<i class="fa-solid fa-exclamation" style={{color: '#ffffff'}}></i>}>
+    <Alert variant='gradient' open={logOpen} className='rounded-none absolute z-50 shadow-md shadow-red-200 right-0 left-0 ' color='red' icon={<i className="fa-solid fa-exclamation" style={{color: '#ffffff'}}></i>}>
       Login Failed. Please enter corrrect credentials.
     </Alert>
     </div>

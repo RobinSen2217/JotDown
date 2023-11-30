@@ -96,48 +96,49 @@ tag:''
     <>
    
     <div>
-        <form  className=' mt-2 grid grid-rows-7 grid-cols-1 justify-evenly mx-auto  [@media(min-width:746px)]:w-1/2 [@media(min-width:319px)]:w-2/3 w-5/6'>
+        <form  className=' pt-4 grid grid-rows-7 grid-cols-1 gap-y-1 justify-evenly mx-auto [@media(min-width:863px)]:w-1/2 [@media(min-width:536px)]:w-3/4 (min-width:480px)]:w-10/12 w-11/12'>
     <Input maxLength={16} id='title' name='title' color='purple' onChange={handleChange}  variant="outlined" label="Title" className=' bg-transparent dark:text-white'/>
-    {errors.title ? <span  className='text-red-400 font-serif'>{errors.title}</span>:<span> &nbsp; </span>}
-    <Textarea name='description' id='description' color='purple' size="lg"  onChange={handleChange} label="Description" className='dark:text-white bg-transparent ' rows={8}/>
+    {errors.title ? <span  className='text-red-400 font-serif'>{errors.title}</span>:<span className=''> &nbsp; </span>}
+    <Textarea name='description' id='description' color='purple' size="lg"  onChange={handleChange} label="Description" className='dark:text-white bg-transparent h-[220px]' rows={8}/>
     {errors.description ? <span id='descErr' className={`text-red-400 font-serif `}>{errors.description}</span>:<span> &nbsp; </span>}
 
 
 
     <Card className="w-full bg-transparent">
       <List className="flex-row">
-        <ListItem className="p-0">
+        <ListItem className="p-0 mr-2">
           <label
             htmlFor="Personal"
-            className="flex w-full cursor-pointer items-center px-3 py-2"
+            className="flex w-full cursor-pointer items-center [@media(min-width:995px)]:px-3 py-2 px-0"
           >
-            <ListItemPrefix className="mr-3">
+            <ListItemPrefix className="[@media(min-width):610px)]:mr-3 mr-0">
               <Radio      
               onChange={handleRadio}
               color='green'
                 name="horizontal-list"
                 id="Personal"
                 ripple={false}
-                className="hover:before:opacity-0"
+                className="hover:before:opacity-0 "
                 containerProps={{
-                  className: "p-0",
+                  className: "",
                 }}
               />
             </ListItemPrefix>
             <Typography
               color="blue-gray"
-              className="font-medium text-blue-gray-400"
+              className="font-medium text-blue-gray-400 [@media(min-width):610px)]:text-base text-sm"
             >
               Personal
             </Typography>
           </label>
         </ListItem>
-        <ListItem className="p-0">
+
+        <ListItem className="p-0 mr-2">
           <label
             htmlFor="Work"
-            className="flex w-full cursor-pointer items-center px-3 py-2"
+            className="flex w-full cursor-pointer items-center [@media(min-width:995px)]:px-3 py-2 px-0"
           >
-            <ListItemPrefix className="mr-3">
+            <ListItemPrefix className="[@media(min-width):610px)]:mr-3 mr-0">
               <Radio
               onChange={handleRadio}
               color='blue'
@@ -146,24 +147,25 @@ tag:''
                 ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0",
+                  className: "",
                 }}
               />
             </ListItemPrefix>
             <Typography
               color="blue-gray"
-              className="font-medium text-blue-gray-400"
+              className="font-medium text-blue-gray-400 [@media(min-width):610px)]:text-base text-sm"
             >
               Work
             </Typography>
           </label>
         </ListItem>
+        
         <ListItem className="p-0">
           <label
             htmlFor="Other"
-            className="flex w-full cursor-pointer items-center px-3 py-2"
+            className="flex w-full cursor-pointer items-center [@media(min-width:995px)]:px-3 py-2 px-0"
           >
-            <ListItemPrefix className="mr-3">
+            <ListItemPrefix className="[@media(min-width):610px)]:mr-3 mr-0">
               <Radio
               onChange={handleRadio}
               color='amber'
@@ -172,13 +174,13 @@ tag:''
                 ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                    className: "p-0",
+                    className: "",
                 }}
               />
             </ListItemPrefix>
             <Typography
               color="blue-gray"
-              className="font-medium text-blue-gray-400"
+              className="font-medium text-blue-gray-400 [@media(min-width):610px)]:text-base text-sm"
             >
               Other
             </Typography>
