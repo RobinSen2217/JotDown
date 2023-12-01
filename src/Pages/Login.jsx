@@ -72,8 +72,8 @@ const {LogAlert}=alerts
 
   return (
     <>
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-    <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring ring-2 ring-purple-600 max-w-xl">
+    <div className="relative flex flex-col justify-center min-h-screen  overflow-hidden">
+    <div className="[@media(min-width:347px)]:w-3/4 w-11/12 p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring ring-2 ring-purple-600 max-w-xl">
         <h1 className="text-3xl font-semibold text-center text-purple-700 underline uppercase decoration-wavy underline-offset-4">
            Sign in
         </h1>

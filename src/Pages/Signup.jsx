@@ -80,17 +80,19 @@ const navigate = useNavigate()
 
   return (
     <div className='' style={{backgroundImage:"linear-gradient(115deg, #9F7AEA, #FEE2FE)"}}>
-  <div className="min-h-screen pt-9" >
+  <div className=" py-[31.5px]" >
  <div className="container mx-auto">
    <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
      <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" 
      style={{backgroundImage: "url('https://w0.peakpx.com/wallpaper/957/429/HD-wallpaper-darklxxkgram-5-black-dark-library-lxxkgram.jpg')"}}>
        <h1 className="text-gray-300 text-3xl mb-3 font-semibold">Welcome</h1>
        <div>
-         <p className="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suspendisse aliquam varius rutrum purus maecenas ac <Link to="#" className="text-purple-500 font-semibold hover:underline">Learn more</Link></p>
+         <p className="text-white">JotDown is your own personal, secure place to make notes for yourself. <br/>Any Idea, Jot it down.
+          {/* <Link to="#" className="text-purple-500 font-semibold hover:underline">Learn more</Link>*/}
+          </p> 
        </div>
      </div>
-     <div className="w-full lg:w-1/2 py-9 px-12">
+     <div className="w-full lg:w-1/2 py-9 [@media(min-width:378px)]:px-12 px-5">
        <h2  className="text-3xl font-semibold mb-4">Register</h2>
        <p className="mb-4">
          Create your account. It’s free and only takes a minute.
