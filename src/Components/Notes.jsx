@@ -120,16 +120,16 @@ const handleEditSubmit=(e)=>{
     <DialogBody>
 
 
-          <form className='flex flex-col justify-evenly mx-auto gap-y-[10px] w-[400px] '>
+          <form className='flex flex-col justify-evenly mx-auto gap-y-[10px] [@media(min-width:515px)]:w-[400px] [@media(min-width:341px)]:w-[250px] w-200px'>
 
             <Input maxLength={16} name="title" label='Title' variant='static' value={eformData.title} onChange={handleChange}  minLength={4}  color='purple' className='text-white placeholder:text-white'/>
             {errors.title ? <span className='text-red-300 font-serif'>{errors.title}</span>:<span> &nbsp; </span>}
 
-             <Textarea name='description' variant='static' value={eformData.description} minLength={5} label='Description' onChange={handleChange} className='text-white placeholder:text-white ' color='purple' rows={4}/>
+             <Textarea name='description' variant='static' value={eformData.description} minLength={5} label='Description' onChange={handleChange} className='text-white placeholder:text-white ' color='purple' rows={7}/>
              {errors.description ? <span  className={`text-red-300 font-serif `}>{errors.description}</span>:<span> &nbsp; </span>}
 
-             <Card className="w-full text-white bg-transparent shadow-none">
-      <List className="flex-row text-white">
+             <Card className="  text-white bg-transparent shadow-none  [@media(min-width:341px)]:w-full w-[100px]">
+      <List className="flex flex-row flex-wrap [@media(min-width:515px)]:flex-nowrap text-white [@media(min-width:341px)]:w-full w-[100px]">
         <ListItem className="p-0 ">
           <label
             htmlFor="personal"

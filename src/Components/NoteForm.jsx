@@ -105,7 +105,7 @@ tag:''
 
 
     <Card className="w-full bg-transparent">
-      <List className="flex-row">
+      <List className="flex-row flex-wrap [@media(min-width:437px)]:flex-nowrap">
         <ListItem className="p-0 mr-2">
           <label
             htmlFor="Personal"
