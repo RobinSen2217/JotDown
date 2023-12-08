@@ -7,9 +7,12 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useContext } from 'react'
 import AlertContext from '../Context/alerts/AlertContext'
+import Spinner from '../Components/Spinner';
 
 
 function Login() {
+
+  const [loading, setLoading] = useState(false)
   const BASE_URL='https://jotdown-backend.onrender.com/'
   const navigate=useNavigate()
   const [errors, setErrors] = useState({})
@@ -46,6 +49,7 @@ if (!formData.email.trim()) {
     setErrors(validationErrors)
 
     if (Object.keys(validationErrors).length === 0) {
+      setLoading(true)
     axios.post(`${BASE_URL}api/auth/login`,{
         "email":formData.email,
         "password":formData.password
@@ -56,7 +60,7 @@ if (!formData.email.trim()) {
         localStorage.setItem('authtoken', auth)
     navigate('/')
 }).catch((err)=>{
-
+setLoading(false)
  LogAlert()
 })
     }
@@ -72,7 +76,7 @@ const {LogAlert}=alerts
 
   return (
     <>
-    <div className="relative flex flex-col justify-center h-[600px]  overflow-hidden">
+    <div className="relative flex flex-col justify-center h-[550px]  overflow-hidden">
     <div className="[@media(min-width:347px)]:w-3/4 w-11/12 p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring ring-2 ring-purple-600 max-w-xl">
         <h1 className="text-3xl font-semibold text-center text-purple-700 underline uppercase decoration-wavy underline-offset-4">
            Sign in
@@ -120,7 +124,10 @@ const {LogAlert}=alerts
             </Link>
         </p>
     </div>
-</div></>
+</div>
+
+{loading && <Spinner/>}
+</>
   )
 }
 

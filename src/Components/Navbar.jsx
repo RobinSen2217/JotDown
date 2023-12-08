@@ -57,7 +57,7 @@ switch (dark) {
 <Alert variant='gradient' open={addOpen} className={`rounded-none z-50  left-0 right-0 absolute shadow-md shadow-green-200`} color='green' icon={<i className="fa-solid fa-thumbs-up" style={{color: '#ffffff'}}></i>}>
       Success: Note Added.
     </Alert>
-    <Alert variant='gradient' open={logOpen} className='rounded-none absolute z-50 shadow-md shadow-red-200 right-0 left-0 ' color='red' icon={<i className="fa-solid fa-exclamation" style={{color: '#ffffff'}}></i>}>
+    <Alert variant='gradient' open={logOpen} className='rounded-none absolute z-50  right-0 left-0 ' color='red' icon={<i className="fa-solid fa-exclamation" style={{color: '#ffffff'}}></i>}>
       Login Failed. Please enter corrrect credentials.
     </Alert>
     </div>
